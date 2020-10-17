@@ -1,13 +1,13 @@
 <?php
 $name = "Jan"
-echo 'text'
+echo 'text';
 echo "text<br>";
-echo 'Imie: $name<br>';
-echo "Imie : $name";
+echo 'Imie: $name<br>;
+echo "Imie: $name";
 
 //konkatencja
 $name = 'Jan'.'Kowalski";
-echo "imie" : $name "." <br>";
+    echo "imie" : $name "." <br>";
 
 //dodawanie
     $add = 2 + 3
@@ -42,3 +42,22 @@ echo <<<LABEL
     Twoje dane: $surname
     <hr>
 LABEL;
+
+/*
+Nowy heredoc z etykieta DANE
+
+Dane uzytkownika (podkreslony tekst)
+Imie i nazwisko: ..... 
+Miejscowosc: ....
+Miejsce urodzenia: ... 
+
+*/
+
+ $name = 'Krystyna';
+ $surname = 'Nowak';
+ $city = 'Poznań';
+ echo <<<DANE
+ <hr>
+ Dane użytkownika:<br>
+ Imie i nazwisko: $name $surname<br>
+ 
