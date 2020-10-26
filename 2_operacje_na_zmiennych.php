@@ -3,7 +3,7 @@
     echo PHP_VERSION; //7.4.10
 
     //porownanie
-        $x = 21;
+        $x = 20;
         $y = 22;
 
         if ($x == $y) {
