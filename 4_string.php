@@ -1,7 +1,6 @@
 <?php
     $text = <<<T
-    Teb - kurs
-    programowania<br>
+    Teb - kurs programowania<br>
 T;
 
     echo "$text<br>";
@@ -41,8 +40,8 @@ LOREM;
     $name = 'Anna';
     $name1 = '  Anna   ';
 
-    echo 'Dłogość $name: ', strlen($name);
-    echo '<br>Dłogość $name1:', strlen($name1);
+    echo 'Długość $name: ', strlen($name);
+    echo '<br>Długość $name1: ', strlen($name1);
 
 //wyczysc zmienna $name1 z bialych znaków
     
@@ -50,7 +49,7 @@ echo strlen(ltrim($name1)); //5
 echo strlen(rtrim($name1)); //6
 echo strlen(trim($name1)),'<hr>'; //4
 
-//przeszukiwanie ciagów znakó
+//przeszukiwanie ciagów znaków
     $address = 'Poznań, ul. Rynek Jeżycki 1, tel .(61) 123-45-67';
     echo $search = strstr($address, 'tel'),'<br>'; 
     
@@ -69,7 +68,7 @@ echo strlen(trim($name1)),'<hr>'; //4
 //substr
     echo substr('Janusz Kowalski', 7, 5);
     echo strlen(substr('Janusz Kowalski', 7, 5));
-    ob_clean();
+    //ob_clean();
 
 //zamiana ciągów
     $replace = str_replace('%korona%', 'grypa', '%korona% jest niebezpieczna');

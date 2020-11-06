@@ -7,9 +7,9 @@
         $y = 22;
 
         if ($x == $y) {
-            echo "$x jest rowna $y";
+            echo "<br>$x jest rowna $y";
         }else {
-            echo "$x nie jest równa $y";
+            echo "<br>$x nie jest równa $y<br>";
         }
 
         $x = 20;
@@ -44,7 +44,7 @@
             echo '<br>Pochodzisz z innego kraju niż Polska lub Gruzja';
 break;
     }
-    echo'<hr>'
+    echo'<hr>';
 /*  Dwie zmienne mają wartośći 7.5 oraz 10,
     sprawdz ktora z nich jest wieksza i wyswietl na ekranie komunikat o tresci:
     Zmienna A jest wieksza od zmiennej B lub zmienna B jest wieksza od zmiennej A
@@ -57,20 +57,21 @@ break;
     $b = 10;
 
     switch ($a <=> $b) {
-        case $b <=> $a:
-            echo'<br><b>Zmienna A jest wieksza od zmiennej B';
+        case $b <= $a:
+            echo'<br><b>Zmienna A jest wieksza od zmiennej B<br>';
             break;
-            case $a <=> $b;
-                echo'<br><b>Zmienna B jest wieksza od zmiennej A';
+            
+        case $a <= $b;
+                echo'<br><b>Zmienna B jest wieksza od zmiennej A<br>';
             break;
-            default:
-            echo'<br><b>Zmienna A i B jest równa';
+        default:
+            echo'<br><b>Zmienna A i B jest równa<br>';
         break;
     }
     // postinkrementacja $x++ => $x = $x + 1
     // postdekrementacja $x-- => $x = $x-1
 
-    // preinkrementacja ++@x
+    // preinkrementacja ++$x
     // predekrementacja --$x
 
     $x = 10;

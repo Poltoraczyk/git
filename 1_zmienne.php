@@ -1,16 +1,16 @@
 <?php
-$name = "Jan"
+$name = 'Jan';
 echo 'text';
 echo "text<br>";
-echo 'Imie: $name<br>;
-echo "Imie: $name";
+echo 'Imie: $name<br>';
+echo "Imie: $name<br>";
 
 //konkatencja
-$name = 'Jan'.'Kowalski";
-    echo "imie" : $name "." <br>";
+$name = 'Jan'.'Kowalski';
+    echo "Imie: $name<br>";
 
 //dodawanie
-    $add = 2 + 3
+    $add = 2 + 3;
     echo "$add<br>";
 
 //typy danych
@@ -27,8 +27,11 @@ echo "$fałsz<br>"; // false nic nie wyswietli
     $oct = 01101; //577
     $dec = 13; //13
     $hex = 0xA1; //161
+    echo "$bin<br>";
+    echo "$oct<br>";
+    echo "$dec<br>";
+    echo "$hex<br>";
     //interpolacja
-    echo
     echo $hex, '<hr>';
 
     echo 'a'.'b'.'c'; //wolniejszy sposob od interpolacji
@@ -37,9 +40,10 @@ echo "$fałsz<br>"; // false nic nie wyswietli
 
 //skladnia heredoc
 $name = "Anna";
+$surname = 'Kowalska';
 echo <<<LABEL
     <br>Imię: $name<br>
-    Twoje dane: $surname
+    Twoje dane: $name $surname
     <hr>
 LABEL;
 
@@ -56,8 +60,14 @@ Miejsce urodzenia: ...
  $name = 'Krystyna';
  $surname = 'Nowak';
  $city = 'Poznań';
+ $age = '34';
  echo <<<DANE
- <hr>
- Dane użytkownika:<br>
- Imie i nazwisko: $name $surname<br>
+     <hr>
+    Dane użytkownika:<br>
+    Imie i nazwisko: $name $surname<br>
+    Miejscowość: $city<br>
+    Wiek: $age
+DANE;
+
+?>
  

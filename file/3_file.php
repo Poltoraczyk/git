@@ -1,4 +1,4 @@
-<?php
+ <?php
     $file = __FILE__;
     echo <<<TEXT
         <hr>

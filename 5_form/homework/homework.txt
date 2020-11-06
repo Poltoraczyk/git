@@ -1,0 +1,10 @@
+Uzytkownik podaje z klawiatury dwie długości
+do wyboru w polu radio ma pole i obwód
+domyślnie ma być zaznaczone pole
+Zabezpiecz formularz przed podaniem pustych danych
+
+Wynik wyświetl w formacie:
+Pole wynosi 20cm2 (2 w indexie górnym)
+Obwód wynosi 20cm
+Dane wyślij z formularza bezpiecznie (POST)
+Obliczenia mają być widoczne w innym pliku
