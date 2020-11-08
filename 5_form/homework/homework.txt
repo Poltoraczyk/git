@@ -1,4 +1,4 @@
-Uzytkownik podaje z klawiatury dwie długości
+  Uzytkownik podaje z klawiatury dwie długości
 do wyboru w polu radio ma pole i obwód
 domyślnie ma być zaznaczone pole
 Zabezpiecz formularz przed podaniem pustych danych
