@@ -9,8 +9,10 @@
     <h4>Formularz z danymi użytkownika</h4>
     <form name="form1" action="./1_form_data.php" method="get"> 
         <?php
-        //print_r($_GET) do analizy
-            if (!empty($_GET['name'])) {
+    
+    //print_r($_GET); // do analizy
+   
+         if (!empty($_GET['name'])) {
                 $name = $_GET['name'];
                 echo "<input type=\"text\" name=\"name\" value=\"$name\"<br>";
             }else{
@@ -23,7 +25,7 @@
                 $surname = $_GET['surname'];
                 echo "<input type=\"text\" name=\"surname\" value=\"$surname\"<br>";
             }else{
-                echo '<input type="text" name="name" placeholder="Nazwisko">';
+                echo '<input type="text" name="surname" placeholder="Nazwisko">';
             }
         ?>
         <br><br>
@@ -39,7 +41,7 @@
         <input type="checkbox" name="statute">Regulamin<br><br>
 
         <?php  
-            switch ($_GET['color']) {
+           /* switch ($_GET['color']) {
                 case 'r':
                     ?>
                         <script>
@@ -61,9 +63,9 @@
                         </script> 
                     <?php
                 break;
-            }
-            ?>
-        
+            }*/
+            ?> 
+ 
 
         <input type="submit" value="Wyślij dane">
     </form>

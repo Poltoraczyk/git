@@ -58,8 +58,12 @@
         return $x;
     }
     
-    echo real(10),'<br>';
-    echo real(10.5),'<br>'; //10.5
+    echo calkowita(10),'<br>';
+    echo calkowita(10.5),'<br>'; //10.5
+
+    function real($x):float {
+        return $x;
+    }
 
     function data(int $a, float $b){
         return $a=$b;
@@ -74,7 +78,7 @@
     $x = floor(2.9999);
     echo "<hr>$x"; //2
     $x = floor(-2.9999);
-    echo "<hr>$x"; //3   
+    echo "<hr>$x"; //-3   
     
     // sufit
     

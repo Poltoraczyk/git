@@ -8,14 +8,15 @@
 <body>
     <h4>Dane pobrane z formularza</h4>
     <?php
-    //echo '<pre>',print_r($_GET);                       
-    //echo $_GET['surname']
+    //echo '<pre>',print_r($_GET), '</pre>';                      
+    //echo $_GET['surname'];
     
-    /*
+   /* 
     echo '<pre>';
         print_r($_GET);
     echo '<pre>';
     */
+
 //Dodaj pole imie oraz pole kod pocztowy (składa sie z dwóch pól, pierwsze ma rozmiar 2 , drugie 3)
 //isset()
 //operatory logiczne AND &&, OR||
@@ -38,7 +39,7 @@
             $color = 'niebieski';
             break;
         }
-   echo <<<T
+        echo <<<T
         Imię i Nazwisko: $_GET[name] $_GET[surname]<br>
         Hasło: {$_GET['pass']}<br>
         Kod pocztowy: $_GET[zipcode]-$_GET[zipcode2]<br>
@@ -47,7 +48,7 @@ T;
 
     echo "<a href=\"./1_form.php?name=$name&surname=$surname\">Popraw dane w formularzu</a>";
     }else{
-    //header{'location: ./1form.php'};
+    //header('location: ./1_form.php');
     ?>
     <script>
         history.back();

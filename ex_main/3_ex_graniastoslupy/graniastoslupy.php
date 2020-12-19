@@ -16,16 +16,16 @@
   </style>
     <table>
         <tr>
-            <th>Graniastosłupy</th>
+            <th colspan = "2">Graniastosłupy</th> 
         </tr>
         <tr>
-            <td><a href="./prostopadloscian.php"><img src="./prostopadloscian.png" alt="Prostopadłościan"></a> </td>
-            <td><a href="./szescian.php"><img src="./szescian.png" alt="Sześcian"></a> </td>
+            <td><a href="./prostopadloscian.php"><img src="./img/prostopadloscian.png" alt="Prostopadłościan"></a> </td>
+            <td><a href="./szescian.php"><img src="./img/szescian.png" alt="Sześcian"></a> </td>
             
         </tr>        
         <tr>
-            <td><a href="./ostroslup.php"><img src="./ostroslup.png" alt="Ostrosłup"></a> </td>
-            <td><a href="./walec.php"><img src="./walec.png" alt="Walec"></a> </td>
+            <td><a href="./ostroslup.php"><img src="./img/ostroslup.png" alt="Ostrosłup"></a> </td>
+            <td><a href="./walec.php"><img src="./img/walec.png" alt="Walec"></a> </td>
         </tr>
     </table>
     

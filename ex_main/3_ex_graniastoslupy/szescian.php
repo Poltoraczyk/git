@@ -7,7 +7,7 @@
 </head>
 <body>
   <h4>Sześcian</h4>
-  <img src="./szescian.png" alt="szescian"><hr>
+  <img src="./img/szescian.png" alt="szescian"><hr>
   <h4>Dane</h4>
   <form method="post">
     <input type="number" name="a" placeholder="a"
@@ -29,11 +29,11 @@ if (!empty($_POST['a'])) {
     }else{
             require_once './scripts/szescian.php';
             echo '<ul>';
-              echo '<li>Pole: ',pole($_POST['a']),'cm<sup>2</sup></li>';
-              echo '<li>Objętość: ',objetosc($_POST['a']),'cm<sup>3</sup></li>';
-              echo '<li>Długość przekątnej: ',przekatna($_POST['a']),'cm</li>';
-              echo '<li>Promień kuli wpisanej w sześcian: ', promkulw($_POST['a']),'cm</li>';             
-              echo '<li>Promień kuli opisanej na sześcianie: ', promkulna($_POST['a']),'cm</li>';
+              echo '<li>Pole: ',number_format(pole($_POST['a']), 2),'cm<sup>2</sup></li>';
+              echo '<li>Objętość: ',number_format(objetosc($_POST['a']), 2),'cm<sup>3</sup></li>';
+              echo '<li>Długość przekątnej: ',number_format(przekatna($_POST['a']), 2),'cm</li>';
+              echo '<li>Promień kuli wpisanej w sześcian: ', number_format(promkulw($_POST['a']), 2),'cm</li>';             
+              echo '<li>Promień kuli opisanej na sześcianie: ', number_format(promkulna($_POST['a']), 2),'cm</li>';
             echo '<ul>';
           }
     

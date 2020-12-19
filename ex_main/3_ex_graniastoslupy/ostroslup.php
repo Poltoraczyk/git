@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prostopadłościan</title>
+  <title>Ostrosłup</title>
 </head>
 <body>
-  <h4>Prostopadłościan</h4>
-  <img src="./img/prostopadloscian.png" alt="prostopadloscian"><hr>
+  <h4>Ostrosłup</h4>
+  <img src="./img/ostroslup.png" alt="ostroslup"><hr>
   <h4>Dane</h4>
   <form method="post">
-    <input type="number" name="a" placeholder="a"
+    <input type="number" name="a" placeholder="pole podstawy"
       <?php 
         if (isset($_POST['a'])) {
           echo "value=\"$_POST[a]\"";
         }
       ?>
     ><br><br>
-    <input type="number" name="b" placeholder="b"
+    <input type="number" name="b" placeholder="Σ pól ścian bocznych"
     <?php 
         if (isset($_POST['b'])) {
           echo "value=\"$_POST[b]\"";
         }
       ?>
     ><br><br>
-    <input type="number" name="c" placeholder="c"
+    <input type="number" name="c" placeholder="H"
     <?php 
         if (isset($_POST['c'])) {
           echo "value=\"$_POST[c]\"";
@@ -41,11 +41,10 @@ if (!empty($_POST['a']) && !empty($_POST['b']) && !empty($_POST['c'])) {
     if($_POST['a'] <= 0 || $_POST['b'] <= 0 || $_POST['c'] <= 0){
       echo '<h4>Dane podane w formularzu muszą być liczbami dodatnimi!</h4>';
     }else{
-            require_once './scripts/prostopadloscian.php';
+            require_once './scripts/ostroslup.php';
             echo '<ul>';
-              echo '<li>Pole: ',number_format(pole($_POST['a'],$_POST['b'],$_POST['c']), 2),'cm<sup>2</sup></li>';
-              echo '<li>Objętość: ',number_format(objetosc($_POST['a'],$_POST['b'],$_POST['c']), 2),'cm<sup>3</sup></li>';
-              echo '<li>Długość przekątnej: ',number_format(przekatna($_POST['a'],$_POST['b'],$_POST['c']), 2), 'cm</li>';
+              echo '<li>Pole: ',number_format(pole($_POST['a'],$_POST['b']), 2),'cm<sup>2</sup></li>';
+              echo '<li>Objętość: ',number_format(objetosc($_POST['a'],$_POST['c']), 2),'cm<sup>3</sup></li>';
             echo '<ul>';
           }
     
