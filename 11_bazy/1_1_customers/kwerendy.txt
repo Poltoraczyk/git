@@ -1,0 +1,2 @@
+1. Wyświetl wszystkich klientów (imię, nazwisko, data urodzenia, wzrost)
+SELECT name FROM customers

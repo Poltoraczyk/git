@@ -1,0 +1,141 @@
+SELECT * FROM `customers`
+INSERT INTO `customers` (`id`, `name`, `surname`, `cities_id`) VALUES (NULL, 'Janusz', 'Kowalski', '1'), (NULL, 'Anna', 'Nowak', '3'), (NULL, 'Paweł', 'Nowak', '1');
+Rozszerz Wykonaj zapytanie ponownie Edytuj Dodaj do zakładek Baza danych : teb1 Czas zapytania : Podczas bieżącej sesjiINSERT INTO `customers` (`id`, `name`, `surname`, `cities_id`) VALUES (NULL, 'Janusz', 'Kowalski', '1'), (NULL, 'Anna', 'Nowak', '3'), (NULL, 'Paweł', 'Nowak', '1')
+SELECT * FROM `customers`
+INSERT INTO `customers` (`id`, `name`, `surname`, `cities_id`) VALUES (NULL, 'Krystyna', 'Pawlak', '4');
+SELECT * FROM `customers`
+SELECT * FROM `states`
+SELECT * FROM `states`
+SELECT `state` FROM `states`
+SELECT `state` FROM `states` WHERE state='Wielkopolskie'
+SELECT `state` FROM `states` WHERE state='Wielkopolskie'
+SELECT * FROM `states` WHERE state='Wielkopolskie'
+SELECT * FROM `customers`
+SELECT * FROM customers
+SELECT surname FROM customers
+SELECT DISTINCT(surname) FROM customers
+SELECT DISTINCT(surname) AS Nazwiska FROM customers
+SELECT COUNT(DISTINCT(surname)) AS Nazwiska FROM customers
+SELECT COUNT(DISTINCT(surname)) AS 'Ilość nazwisk' FROM customers
+SELECT * FROM `customers`
+SELECT * FROM `customers` WHERE `cities_id`=1
+SELECT name,surname FROM `customers` WHERE `cities_id`=1
+SELECT name AS Imię,surname AS Nazwisko FROM `customers` WHERE `cities_id`=1
+SELECT id, name AS Imię,surname AS Nazwisko FROM `customers` WHERE `cities_id`=1
+SELECT * FROM `customers`
+SELECT id, name AS Imię,surname AS Nazwisko FROM `customers` WHERE `cities_id`=1
+SELECT * FROM `cities`
+SELECT * FROM `customers`
+SELECT * FROM `customers` WHERE id > 3
+SELECT * FROM `customers` WHERE `id` > 3
+SELECT * FROM `customers` WHERE 'id' > 3
+SELECT * FROM `customers` WHERE `id` > 3
+SELECT * FROM `customers` WHERE 'id' > 3
+SELECT * FROM `customers` WHERE `id` > '3'
+SELECT * FROM `customers` WHERE `id` > 3
+SELECT * FROM `customers` WHERE `id` >= 3
+SELECT * FROM `customers` WHERE `id` <> 3
+SELECT * FROM `customers` WHERE `id` != 3
+SELECT * FROM `customers` WHERE `id` BETWEEN 3 AND 6
+SELECT * FROM `customers` WHERE `surname`='Nowak'
+SELECT count(*) FROM `customers` WHERE `surname`='Nowak'
+SELECT count(*) AS 'Ilość osób z nazwiskiem Nowak' FROM `customers` WHERE `surname`='Nowak'
+SELECT * FROM `customers` WHERE `surname`='Nowak'
+SELECT * FROM `customers` WHERE `surname`='Nowak' AND `cities_id`=1
+SELECT COUNT(*) FROM `customers` WHERE `surname`='Nowak' AND `cities_id`=1
+SELECT * FROM `cities`
+SELECT COUNT(*) FROM `cities` WHERE `states_id`=1
+SELECT * FROM `states`
+SELECT * FROM `cities`
+SELECT * FROM `cities` WHERE city='Poznań'
+SELECT * FROM `cities` WHERE city='Poznań' AND city='Gniezno'
+SELECT * FROM `cities` WHERE city='Poznań' OR city='Gniezno'
+SELECT * FROM `cities` WHERE NOT city='Poznań'
+SELECT * FROM `cities` WHERE ! city='Poznań'
+SELECT * FROM `cities` WHERE NOT city='Poznań'
+SELECT * FROM `customers`
+SELECT * FROM `customers` WHERE cities_id=1
+SELECT * FROM `customers` WHERE cities_id=1 AND name='Paweł'
+SELECT * FROM `customers` WHERE cities_id=1 AND (name='Paweł' OR name='Krystyna')
+SELECT * FROM `customers` WHERE cities_id=1 AND (name='Paweł1' OR name='Krystyna')
+SELECT * FROM `customers` WHERE cities_id=1 OR (name='Paweł1' OR name='Krystyna')
+SELECT * FROM `customers` WHERE cities_id=1 OR (name='Paweł1' OR name='Krystyna') ORDER BY surname
+SELECT * FROM `customers` WHERE cities_id=1 OR (name='Paweł1' OR name='Krystyna') ORDER BY surname,name
+SELECT * FROM `customers` WHERE cities_id=1 OR (name='Paweł1' OR name='Krystyna') ORDER BY surname DESC,name
+SELECT * FROM `states`
+INSERT INTO `states`(`id`, `state`) VALUES (NULL,'Śląskie')
+SELECT * FROM `states`
+INSERT INTO `states`(`state`) VALUES ('Pomorskie'),('Lubuskie')
+SELECT * FROM `states`
+SELECT * FROM `cities`
+INSERT INTO `cities`(`id`, `city`, `states_id`) VALUES (NULL,'Jarocin',1)
+SELECT * FROM `cities`
+SELECT * FROM `customers`
+SELECT * FROM `states`
+ALTER TABLE `customers` ADD `birthday` DATE NULL AFTER `surname`;
+SELECT * FROM `customers`
+UPDATE `customers` SET `birthday` = '2000-08-02' WHERE `customers`.`id` = 2;
+UPDATE `customers` SET `birthday` = '1999-01-03' WHERE `customers`.`id` = 4;
+UPDATE `customers` SET `birthday` = '2021-01-03' WHERE `customers`.`id` = 6;
+SELECT * FROM `customers` WHERE `birthday` > 1990-01-20
+SELECT * FROM `customers` WHERE `birthday` < 2000-08-02
+SELECT * FROM `customers` WHERE `birthday` < '2000-08-02'
+SELECT * FROM `customers` WHERE `birthday` < 2000-08-02
+SELECT * FROM `customers` WHERE `birthday` < '2000-08-02'
+SELECT * FROM `customers`
+SELECT * FROM `customers` WHERE birthday IS NULL
+SELECT * FROM `customers` WHERE birthday IS NOT NULL
+SELECT * FROM `customers`
+SELECT * FROM `customers` ORDER BY birthday
+SELECT * FROM `customers` WHERE birthday IS NOT NULL ORDER BY birthday
+SELECT * FROM `customers` WHERE birthday IS NOT NULL ORDER BY birthday LIMIT 1
+SELECT * FROM `customers` WHERE birthday IS NOT NULL ORDER BY birthday LIMIT 1
+SELECT (birthday) AS 'Najstarsza osoba' FROM `customers` WHERE birthday IS NOT NULL ORDER BY birthday LIMIT 1
+SELECT (birthday) AS 'Najstarsza osoba' FROM `customers` WHERE birthday IS NOT NULL ORDER BY birthday DESC LIMIT 1
+SELECT (birthday) AS 'Najmłodsza osoba' FROM `customers` WHERE birthday IS NOT NULL ORDER BY birthday DESC LIMIT 1
+SELECT * FROM `customers` WHERE birthday IS NOT NULL ORDER BY birthday DESC LIMIT 1
+ALTER TABLE `customers` ADD `height` DECIMAL(5,2) NULL AFTER `birthday`;
+SELECT * FROM `customers`
+UPDATE `customers` SET `height` = '175' WHERE `customers`.`id` = 1;
+UPDATE `customers` SET `height` = '168.5' WHERE `customers`.`id` = 2;
+UPDATE `customers` SET `height` = '173' WHERE `customers`.`id` = 6;
+UPDATE `customers` SET `height` = '180' WHERE `customers`.`id` = 4;
+SELECT MAX(height) FROM `customers`
+SELECT MIN(height) FROM `customers`
+SELECT MIN(height), name FROM `customers`
+SELECT MIN(height), name, surname FROM `customers`
+SELECT MIN(height) AS 'najnizsza osoba w grupie', name, surname FROM `customers`
+SELECT MIN(height) AS 'Najniższa osoba w grupie', name, surname FROM `customers`
+SELECT MIN(height) + 's' AS 'Najniższa osoba w grupie', name, surname FROM `customers`
+SELECT CONCAT(MIN(height),'cm') AS 'Najniższa osoba w grupie', name, surname FROM `customers`
+SELECT CONCAT(AVG(height),'cm') AS 'Średni wzrost', name, surname FROM `customers`
+SELECT CONCAT(AVG(height),'cm') AS 'Średni wzrost' FROM `customers`
+SELECT CONCAT(SUM(height),'cm') AS 'Średni wzrost' FROM `customers`
+SELECT * FROM `customers`
+SELECT * FROM `customers` WHERE cities_id=1
+SELECT * FROM `customers` WHERE cities_id='Poznań'
+SELECT * FROM `customers`
+UPDATE `customers` SET `cities_id` = '1' WHERE `customers`.`id` = 5;
+SELECT * FROM `customers`
+SELECT * FROM `customers`
+SELECT * FROM `customers` GROUP BY surname
+SELECT surname FROM `customers` GROUP BY surname
+SELECT surname, count(surname) FROM `customers` GROUP BY surname
+SELECT surname, count(surname) AS 'Ilość osob' FROM `customers` GROUP BY surname
+SELECT surname, count(surname) AS 'Ilość osob' FROM `customers` GROUP BY surname ORDER BY 2
+SELECT surname, count(surname) AS 'Ilość osob' FROM `customers` GROUP BY surname ORDER BY 2 DESC
+SELECT surname, count(surname) AS 'Ilość osob' FROM `customers` GROUP BY surname ORDER BY 2 DESC LIMIT 1
+SELECT * FROM `cities`
+SELECT * FROM `cities` GROUP BY states_id
+Rozszerz Wykonaj zapytanie ponownie Edytuj Wyjaśnij Profilowanie Dodaj do zakładek Baza danych : teb1 Czas zapytania : 15:42:30
+SELECT states.state FROM `cities` INNER JOIN states ON cities.states_id=states.state GROUP BY states_id
+SELECT states.state FROM `cities` INNER JOIN states ON cities.states_id=states.state
+SELECT city FROM `cities` INNER JOIN states ON cities.states_id=states.state
+SELECT * FROM `cities` INNER JOIN states ON cities.states_id=states.state
+SELECT * FROM `cities` INNER JOIN states ON cities.states_id=states.id
+SELECT states.state FROM `cities` INNER JOIN states ON cities.states_id=states.id
+SELECT states.state FROM `cities` INNER JOIN states ON cities.states_id=states.id GROUP BY states.state
+SELECT states.state, COUNT(cities.id) FROM `cities` INNER JOIN states ON cities.states_id=states.id GROUP BY states.state
+SELECT states.state, COUNT(cities.id) AS 'Ilość miast' FROM `cities` INNER JOIN states ON cities.states_id=states.id GROUP BY states.state ORDER BY 'Ilość miast'
+SELECT states.state, COUNT(cities.id) AS 'Ilość miast' FROM `cities` INNER JOIN states ON cities.states_id=states.id GROUP BY states.state ORDER BY 'Ilość miast' LIMIT 1
+SELECT s.state, COUNT(c.id) AS 'Ilość miast' FROM `cities` AS c INNER JOIN states AS s ON c.states_id=s.id GROUP BY s.state ORDER BY 'Ilość miast' LIMIT 1

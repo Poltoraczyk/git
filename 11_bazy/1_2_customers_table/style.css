@@ -1,0 +1,15 @@
+table, tr, th, td{
+    border: solid 1px grey;
+    text-align: center;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+th{
+    background-color: burlywood;
+    color: rgb(74, 70, 70);
+}
+
+table{
+    margin: 10px 0px 0px 20px
+}
