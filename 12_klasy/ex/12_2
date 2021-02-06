@@ -1,0 +1,9 @@
+Utwórz konstruktor, który przypisuje dla właściwości: imię, nazwisko,
+data_urodzenia, narodowosc wartosci początkowe (mozna dodac wartość początkową null).
+
+Utwórz metodę wyświetlającą wszystkie dane na ekranie w formacie:
+Imię i nazwisko: ...
+Data urodzenia: ..., narodowosc: ... (heredoc)
+
+Dodaj również konstruktor klasy Person
+Utworz w drugim pliku o nazwie __person.php dwa obiekty, które będą korzystały z definicji klasy, która bedzie umieszczona w pliku Person.php
