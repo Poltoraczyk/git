@@ -1,8 +1,15 @@
 
-
+klasa nadrzędna, rodzic
+klasa potomna, podrzędna, dziedzicząca, dziecko
 
 ==================
 obiekt jest pojedynczym egzemplarzem klasy
+
+===================
+wlasciwosc, skladowa (zmienna)
+metoda (funkcja [prog.obj.])
+===================
+standard PSR-12
 
 ===================
 do skłądowych odwołujemy sie za pomocą operatora ->
@@ -18,3 +25,16 @@ konstruktor jest to metoda wywoływana w momencie utworzenia obiektu
 
 ===================
 destruktor - działa odwrotnie, czyli wykonuje się kiedy obiekt jest usuwany (niszczony)
+
+===================
+nie można utworzyć nowej instancji obiektu klasy abstrakcyjnej
+
+===================
+metoda abstrakcyjna, definiuje jedynie sygnature metody bez jej implementacji
+implementację metody abstrakcyjnej musimy dodać w klasie pochodnej (dziedziczącej)
+jeżeli klasa ma metodę abstrakcyjną to musi być również klasą abstrakcyjną.
+
+===================
+Interfejsy służą nam do określenia, jakie metody muszą zostać zaimplementowane (inaczej mówiąc stworzone) w klasie. Interfejs może zawierać jedynie deklaracje metod, bez ich ciał. Interfejs deklarujemy podobnie jak klasę, lecz przy użyciu słowa kluczowego interface.
+====================
+Na kolejnych zajęciach zrobić modyfikatory dostepu 20.02.2021
