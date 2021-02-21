@@ -198,7 +198,7 @@ $_SESSION['marketing'] = array();
   $result = $stmt->get_result();
   while ($agreement = $result->fetch_assoc()) {
     
-    array_push($_SESSION['marketing'], $agreement['id'])
+    array_push($_SESSION['marketing'], $agreement['id']);
     echo <<<AGREEMENT
       <input type="checkbox" class="custom-control-input" name="$agreement[id]" id="marketing">
       <label class="custom-control-label" for="marketing">$agreement[marketing_name]</label>
