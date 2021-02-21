@@ -46,13 +46,16 @@
           
     require_once('./connect.php');
     if (!$connect->connect_errno) {
-        $name= $_POST['name'];
-        $surname= $_POST['surname'];
-        $email= $_POST['email1'];
-        $pass= $_POST['pass1'];
-        $city= $_POST['city'];
+        $name = $_POST['name'];
+        $surname = $_POST['surname'];
+        $gender = $_POST['gender'];
+        $email = $_POST['email1'];
+        $pass = $_POST['pass1'];
         $birthday = $_POST['birthday'];
-        echo $name, $surname, $email, $pass ,$city, $birthday, $city;
+        $city = $_POST['city'];
+        $nationality = $_POST['nationality'];
+        $marketing = $_POST['marketing'];
+        //echo $name, $surname, $email, $pass ,$city, $birthday, $city;
         $pass = password_hash($pass, PASSWORD_ARGON2ID);
 
         //old(SQL Injection)
@@ -65,9 +68,10 @@
         */
 
         //new
-        $sql = "INSERT INTO `customers` (`cities_id`, `name`, `surname`, `email`, `pass`, `birthday`) VALUES (?,?,?,?,?,?)";
+        $sql = "INSERT INTO `customers` (`cities_id`, `nationality_id`, `name`, `surname`, `gender`,  `email`, `pass`, `birthday`) VALUES (?,?,?,?,?,?,?,?)";
         $stmt = $connect->prepare($sql);
-        $stmt->bind_param("ssssss", $city, $name, $surname, $email, $pass, $birthday);
+        $stmt->bind_param("ssssssss", $city, $nationality, $name, $surname, $gender, $email, $pass, $birthday);
+        
         if ($stmt->execute()) {
             header("location: ../index.php?register=success&email=$email");
             exit();
