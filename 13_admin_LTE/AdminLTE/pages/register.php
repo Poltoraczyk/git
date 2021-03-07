@@ -160,7 +160,7 @@ CITY;
       <option value="$nationality[id]">$nationality[country]</option>
 CITY;
   }
-  }
+}
   
 ?>
 
@@ -187,10 +187,11 @@ CITY;
           <!---zgoda marketing --->
       <div class="row">
         <div class="col-8">      
-          <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+          
 <!-- sprawdzenie czy w db istnieja zgody marketingowe -->
 
 <?php
+/*
 $_SESSION['marketing'] = array();
   $sql = "SELECT * FROM marketing";
   $stmt = $connect->prepare($sql);
@@ -206,11 +207,12 @@ AGREEMENT;
   }
 
   $connect->close();
+  */
 ?>
 
 <!-- homework -->
 <?php 
-/*
+
   $_SESSION['marketing'] = array();
   $sql = "SELECT * FROM marketing";
   $stmt = $connect->prepare($sql);
@@ -220,18 +222,20 @@ AGREEMENT;
     if ($agreement['active'] == 1) {
       array_push($_SESSION['marketing'], $agreement['id']);
     echo <<<AGREEMENT
-      <input type="checkbox" class="custom-control-input" name="$agreement[id]" id="marketing">
-      <label class="custom-control-label" for="marketing">$agreement[marketing_name]</label>
+    <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+
+      <input type="checkbox" class="custom-control-input" name="marketing$agreement[id]" id="$agreement[marketing_name]">
+      <label class="custom-control-label" for="$agreement[marketing_name]">$agreement[marketing_name]</label>
+    </div>
 AGREEMENT;
     }
   }
 
   $connect->close();
-  */
+
 ?>
 
 
-          </div>
         </div>
           <!-- /.col -->
           <div class="col-4">

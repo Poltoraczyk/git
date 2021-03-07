@@ -54,9 +54,21 @@
         $birthday = $_POST['birthday'];
         $city = $_POST['city'];
         $nationality = $_POST['nationality'];
-        $marketing = $_POST['marketing'];
         //echo $name, $surname, $email, $pass ,$city, $birthday, $city;
         $pass = password_hash($pass, PASSWORD_ARGON2ID);
+        
+        $avatar = ($gender == "f") ? './img/woman.png' : './img/man.png';
+        
+        /*
+        switch ($gender) {
+            case 'm':
+                $avatar = './img/man.png';
+                break;
+            case 'f':
+                $avatar = './img/woman.png';
+                break;
+            }
+        */ 
 
         //old(SQL Injection)
         /*
@@ -67,16 +79,42 @@
         echo $name;
         */
 
-        //new
-        $sql = "INSERT INTO `customers` (`cities_id`, `nationality_id`, `name`, `surname`, `gender`,  `email`, `pass`, `birthday`) VALUES (?,?,?,?,?,?,?,?)";
+        //new 
+        $sql = "INSERT INTO `customers` (`cities_id`, `nationality_id`, `name`, `surname`, `gender`,  `email`, `pass`, `birthday`, `avatar`) VALUES (?,?,?,?,?,?,?,?,?)";
         $stmt = $connect->prepare($sql);
-        $stmt->bind_param("ssssssss", $city, $nationality, $name, $surname, $gender, $email, $pass, $birthday);
+        $stmt->bind_param("sssssssss", $city, $nationality, $name, $surname, $gender, $email, $pass, $birthday, $avatar);
         
         if ($stmt->execute()) {
-            header("location: ../index.php?register=success&email=$email");
-            exit();
+            //header("location: ../index.php?register=success&email=$email");
+            
+            // zgody marketingowe
+            if (count($_SESSION['marketing']) > 0) {
+                $user_id = $connect->insert_id;
+                foreach ($_SESSION['marketing'] as $key=>$value){
+                    if (isset($_POST["marketing$value"])){
+                        //echo 'Zaznaczyłeś id=', $value,'<br>';
+                        
+                        //echo 'Dodany user o id',$connect->insert_id;
+                        $sql = "INSERT INTO `customer_marketing` (`customers_id`, `marketing_id`) VALUES (?,?)";
+                        
+                        $stmt = $connect->prepare($sql);
+                        $stmt->bind_param("ss", $user_id, $value);
+                        $stmt->execute();
+                    }
+                }
+            }
+
+           // if ($stmt->execute()) {
+                header("location: ../index.php?register=success&email=$email");
+                $connect->close();
+                exit();
+            
+
+            //header("location: ../index.php?register=success&email=$email");
+
+            //echo 'Dodany user o id= ',$connect->insert_id;
         }else{
-            echo $connect->error;
+            //echo $connect->error;
             $_SESSION['error'] = "Nie dodano nowego użytkownika:<br>".$connect->error;
             ?>
                 <script>

@@ -46,7 +46,7 @@ ERROR;
     </div>
     <div class="card-body">
 
-      <form action="./logged/login.php" method="post">
+      <form action="./scripts/login.php" method="post">
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Email" name="email">
           <div class="input-group-append">
