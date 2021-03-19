@@ -3,7 +3,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['logged']['email'])) {
-  $_SESSION['error'] = 'Zalpguj się na naszą stronę!';
+  $_SESSION['error'] = 'Zaloguj się na naszą stronę!';
   header('location: ../');
   exit();
 }
