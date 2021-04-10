@@ -1,0 +1,73 @@
+REJESTRACJA
+
+ZGODY MARKETINGOWE
+
+wyświetlane tylko aktywne (active=1)  ok
+
+formularz obecnie wysyłany jest do strony x.php, zmienić na /scripts/register.php ok
+
+dodać dodawanie zgód marketingowych do tabeli customers_marketing, wykorzystać tablicę umieszczoną w zmiennej sesyjnej o nazwie: $_SESSION['marketing'] ok
+
+pobrac z niej id aktywnych zgód marketingowych i sprawdzić czy są zatwierdzone
+sprawdzić foreach czy istnieje zmienna $_POST['1'] $_POST['2'] itd.
+ilość zgód: sprawdzić ilość elementów w tablicy: $_SESSION['marketing'] ok
+=========================
+
+
+LOGOWANIE
+
+Sprawdzenie czy login znajduje się w bazie danych: 
+  $stmt->store_result();
+  echo 'Ilość rekordów: ',$stmt->num_rows;
+
+nie) przekierowanie do strony index.php (komunikat: błędny login lub hasło) ok
+tak) pobranie dla loginu (email) hasła z bazy danych i porównanie z hasłem podanym przez użytkownika ok
+błędne)
+przekierowanie do strony index.php (komunikat: błędny login lub hasło)
+poprawne)
+
+dodać trzy uprawnienia: user, moderator, administrator
+dodać trzy uprawnienia: user, moderator, administrator
+połączyć tabele ?
+dodać uprawnienia do zmiennej sesyjnej
+wyświetlić uprawnienia na stronie logged.php
+
+sprawdzenie uprawnień użytkownika w bazie danych
+przekierowanie do strony /logged/logged.php
+
+=====================================================================================
+
+jesli $_SESSION['marketing'] ma więcej elementów niż 0 oznacza, że użytkowników zaznaczył przynajmniej jedną zgodę marketingową
+
+echo 'Dodany user o id= ',$connect->insert_id;
+
+
+==================================================
+
+REJESTRACJA
+
+w zależności od wyboru użytkownika: kobieta lub mężczyzna należy:
+sprawdzić jakiego dokonał wyboru:
+jeżeli wybrał kobieta (w) to do bazy w polu avatar dodajemy ściężke do zdjęcia z kobietą: ./img/woman.png
+jeżeli wybrał mężczyznę (m) to do bazy w polu avatar dodajemy ściężke do zdjęcia z mężczyzną: ./img/man.png
+wstawić odpowiednią ścieżke do pola avatar w customer
+
+następnie na stronie logged.php => w ASIDE należy wyświetlić odpowiedni avatar (pobrać z pola avatar w customer)
+
+======================================================================================
+
+SYSTEM ZARZĄDZANIA UCZELNI
+
+PANEL USER (wykładowca, student, kadra zarządzająca(dziekani, z-ca dziekana, kierownik katedry))
+
+================================================
+
+PANEL STUDENT
+
+1) Dodać stronę startową, na której będzie kalendarz (/pages/calendar.html)
+2) Z lewej strony kalendarza dodaj informacje o profilu użytkownika: /pages/examples/profile.html
+
+====================================================
+
+
+SELECT permission, permission_id, count(permission_id) FROM customers INNER JOIN permissions ON customers.permission_id=permissions.id GROUP BY permission_id
